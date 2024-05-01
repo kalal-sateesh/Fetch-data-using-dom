@@ -1,4 +1,5 @@
 const ul = document.getElementById("ul");
+const container = document.getElementById("container");
 
 const getData = async () => {
   try {
@@ -27,6 +28,12 @@ const getData = async () => {
       ul.appendChild(li);
     });
   } catch (err) {
+    let div1 = document.createElement("div");
+    container.appendChild(div1);
+    div1.innerText = "Error while fetching data please try again later";
+    div1.style.color="red";
+    div1.style.fontWeight="bold";
+    div1.style.marginTop="50px";
     console.log(err);
   }
 };
